@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+  <meta name="theme-color" content="#10152c">
+  <title>Batalla CIO — Arcade</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="shell">
+    <header class="brandbar"><div class="brand-mark">CIO</div><div><p class="eyebrow">CENTRO INTEGRADO DE OPERACIONES</p><h1>BATALLA <span>CIO</span></h1></div><div class="edition">PIXEL ENGINE V4 <b>04</b></div></header>
+    <section id="menu" class="panel">
+      <div class="hero-copy"><p class="eyebrow">DIVISIÓN SALVADOR · MODO ARCADE</p><h2>¡Que comience<br><em>el turno!</em></h2><p>Cuatro operadores. Dos nuevos escenarios. ¡La batalla comienza en El Salvador!</p></div>
+      <div class="menu-controls">
+        <div class="mode-switch"><button class="mode active" data-mode="cpu">1 JUGADOR <small>vs CPU</small></button><button class="mode" data-mode="versus">2 JUGADORES <small>local</small></button></div>
+        <div class="pickers"><div><div class="section-label">JUGADOR 1 <span>AZUL</span></div><div id="chars1" class="roster"></div></div><div id="player2-picker"><div class="section-label"><span id="rival-label">RIVAL CPU</span> <span>ROJO</span></div><div id="chars2" class="roster"></div></div></div>
+        <div class="difficulty-options" id="cpu-options" aria-label="Nivel de dificultad de la CPU">
+          <strong>DIFICULTAD CPU</strong>
+          <div class="difficulty-switch">
+            <button type="button" data-difficulty="facil" aria-pressed="false">FÁCIL</button>
+            <button type="button" data-difficulty="normal" class="active" aria-pressed="true">NORMAL</button>
+            <button type="button" data-difficulty="dificil" aria-pressed="false">DIFÍCIL</button>
+          </div>
+        </div>
+        <div class="stage-picker"><div class="section-label">SELECCIONA TU ESCENARIO <span>3 ARENAS</span></div><div id="stages" class="stage-grid" aria-label="Selecciona un escenario"></div></div>
+        <button id="start" class="primary">INICIAR COMBATE <span>▶</span></button>
+        <p class="hint">Elige a tu operador. Combates al mejor de 3 rondas. Elige también tu rival CPU y el escenario para el combate.</p>
+      </div>
+    </section>
+    <section id="arena" class="arena hidden">
+      <div class="hud"><div class="fighter-hud left"><div class="portrait" id="portrait1">D</div><div class="hud-info"><div class="name-line"><b id="name1">DANIEL</b><small id="tag1">CONTROL PROCESOS</small></div><div class="health"><i id="health1"></i></div><div class="meter" title="Energía de especial"><i id="meter1"></i></div><div class="guard-bar" title="Resistencia de guardia"><i id="guard1"></i></div></div></div><div class="round-info"><small id="round-label">RONDA 1</small><strong id="timer">90</strong><div class="win-score"><span id="score1" aria-label="Victorias jugador 1">○○</span><span id="score2" aria-label="Victorias jugador 2">○○</span></div><small id="status">¡LISTOS!</small></div><div class="fighter-hud right"><div class="hud-info"><div class="name-line"><small id="tag2">MAESTRO DEL CONTRAATAQUE</small><b id="name2">PANCHO</b></div><div class="health"><i id="health2"></i></div><div class="meter" title="Energía de especial"><i id="meter2"></i></div><div class="guard-bar" title="Resistencia de guardia"><i id="guard2"></i></div></div><div class="portrait" id="portrait2">O</div></div></div>
+      <div class="game-actions"><button type="button" id="mute-button" aria-pressed="false" title="Activar o silenciar sonido (M)">SONIDO ON</button><button type="button" id="pause-button" title="Pausar o reanudar (Esc)">II PAUSA</button></div>
+      <canvas id="game" width="960" height="540" aria-label="Arena de combate Batalla CIO"></canvas>
+      <div class="bottom-hud"><div class="special-label"><span id="special1">ESPECIAL: SOBRECARGA SAG</span><small>ENERGÍA</small></div><div class="combo" id="combo"></div><div class="special-label right-label"><span id="special2">ESPECIAL: GANCHO VELOZ</span><small>ENERGÍA</small></div></div>
+      <div class="fight-overlay hidden" id="overlay"><div class="result-card"><p class="eyebrow" id="result-kicker">FIN DEL COMBATE</p><h2 id="result-title">¡VICTORIA!</h2><p id="result-sub">La operación continúa.</p><div class="result-actions"><button id="rematch" class="primary">REVANCHA ↻</button><button id="back-menu" class="secondary">CAMBIAR LUCHADORES</button></div></div></div>
+      <div class="pause-tag hidden" id="pause-tag"><strong>PAUSA</strong><button type="button" id="resume" class="primary">CONTINUAR ▶</button><button type="button" id="back-from-pause" class="secondary">VOLVER AL MENÚ</button></div>
+    </section>
+    <section id="touch-controls" class="touch-controls hidden" aria-label="Controles táctiles jugador 1">
+      <div class="touch-movement">
+        <button type="button" data-touch="left" aria-label="Mover a la izquierda">◀</button>
+        <button type="button" data-touch="right" aria-label="Mover a la derecha">▶</button>
+        <button type="button" data-touch="jump" aria-label="Saltar">↑</button>
+        <button type="button" data-touch="crouch" aria-label="Agacharse">↓</button>
+      </div>
+      <div class="touch-actions">
+        <button type="button" data-touch="quick" aria-label="Golpe rápido">RÁPIDO</button>
+        <button type="button" data-touch="heavy" aria-label="Golpe fuerte">FUERTE</button>
+        <button type="button" data-touch="kick" aria-label="Patada baja">PATADA</button>
+        <button type="button" data-touch="special" aria-label="Especial (50 de energía)">ESPECIAL</button>
+        <button type="button" data-touch="guard" aria-label="Bloquear">BLOQ.</button>
+      </div>
+    </section>
+    <section class="controls-panel"><div class="controls-heading"><b>CONTROLES</b><span>PIXEL SPRITE COMBAT · V4</span></div><div class="control-columns"><div><strong>JUGADOR 1</strong><p><kbd>A</kbd><kbd>D</kbd> mover <kbd>W</kbd> saltar <kbd>S</kbd> agacharse</p><p><kbd>J</kbd> rápido <kbd>K</kbd> fuerte <kbd>L</kbd> patada <kbd>I</kbd> bloquear <kbd>U</kbd> especial</p></div><div><strong>JUGADOR 2</strong><p><kbd>←</kbd><kbd>→</kbd> mover <kbd>↑</kbd> saltar <kbd>↓</kbd> agacharse</p><p><kbd>1</kbd> rápido <kbd>2</kbd> fuerte <kbd>3</kbd> patada <kbd>0</kbd> bloquear <kbd>4</kbd> especial</p></div><div class="extra-controls"><strong>GENERAL</strong><p><kbd>ESC</kbd> pausa <kbd>ENTER</kbd> reiniciar</p><p><kbd>H</kbd> ver hitboxes <kbd>M</kbd> sonido · Bloqueo + agacharse = defensa baja.</p><p>Mando: A rápido, B patada, X fuerte, Y especial, LB bloqueo, RB salto.</p><p>El golpe fuerte se evita agachándote; la patada baja se defiende agachado. Especial: 50 de energía.</p></div></div></section>
+    <footer><span>BATALLA CIO · PAMPA EDITION</span><span>LA SEGURIDAD ES EL MEJOR COMBO</span></footer>
+  </main>
+  <script src="combat-core.js"></script>
+  <script src="game.js"></script>
+</body>
+</html>

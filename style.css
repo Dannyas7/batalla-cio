@@ -1,0 +1,87 @@
+
+:root{--ink:#10152c;--panel:#171f3d;--line:#3d4b78;--cyan:#47e5e5;--gold:#ffca4b;--red:#ff5d67;--blue:#53a8ff}*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at 50% 0,#29365f 0,#10152c 55%,#090d1d 100%);color:#f4f5ff;font-family:'Roboto Condensed',Arial,sans-serif;min-height:100vh;padding:22px 14px}.shell{max-width:1180px;margin:auto}.brandbar{display:flex;align-items:center;gap:14px;margin:0 auto 15px;max-width:1080px}.brand-mark{width:54px;height:48px;display:grid;place-items:center;background:var(--gold);color:#11162e;font:18px 'Press Start 2P';clip-path:polygon(10% 0,100% 0,90% 100%,0 100%);text-shadow:2px 2px #fff}.eyebrow{font:9px 'Press Start 2P';letter-spacing:1px;color:var(--cyan);margin:0 0 7px}.brandbar h1{font:20px 'Press Start 2P';margin:0;letter-spacing:-1px}.brandbar h1 span{color:var(--gold)}.edition{margin-left:auto;color:#9eadd9;font:9px 'Press Start 2P';border:1px solid var(--line);padding:10px}.edition b{color:var(--gold)}.panel,.arena,.controls-panel{max-width:1080px;margin:0 auto 14px;border:2px solid var(--line);background:linear-gradient(145deg,rgba(28,39,75,.98),rgba(14,21,45,.98));box-shadow:0 12px 35px #05081788}.panel{min-height:440px;display:grid;grid-template-columns:.8fr 1.2fr;overflow:hidden;background-image:linear-gradient(90deg,rgba(13,20,44,.88),rgba(13,20,44,.6)),url('cio_control_room.png');background-size:cover;background-position:center}.hero-copy{padding:42px 30px;display:flex;flex-direction:column;justify-content:center}.hero-copy h2{font:clamp(24px,4vw,42px) 'Press Start 2P';line-height:1.5;margin:8px 0 18px;text-shadow:4px 4px #111}.hero-copy h2 em{font-style:normal;color:var(--gold)}.hero-copy>p:last-child{font-size:18px;max-width:300px;color:#d2daf5}.menu-controls{padding:25px;background:#0e1630dc;border-left:2px solid #7183b155}.mode-switch{display:flex;gap:8px;margin-bottom:18px}.mode,.primary,.secondary{border:1px solid var(--line);cursor:pointer;font-family:'Press Start 2P';transition:.15s}.mode{flex:1;background:#202b50;color:#aab7df;padding:12px 8px;font-size:9px}.mode small{display:block;font:11px 'Roboto Condensed';margin-top:5px}.mode.active{border-color:var(--gold);color:var(--gold);background:#3a3150}.pickers{display:grid;grid-template-columns:1fr 1fr;gap:14px}.section-label{font:9px 'Press Start 2P';margin:0 0 9px;color:#e9edff}.section-label span{color:var(--blue);float:right}.roster{display:grid;grid-template-columns:repeat(3,1fr);gap:6px}.char-card{border:1px solid #3b4a73;background:#1a2445;color:#eaf0ff;padding:7px 3px 6px;min-height:82px;cursor:pointer;text-align:center}.char-card.selected{border:2px solid var(--gold);background:#39334a;box-shadow:0 0 12px #ffca4b55}.char-card canvas{width:45px;height:45px;image-rendering:pixelated;display:block;margin:0 auto 3px}.char-card b{font-size:12px}.char-card small{display:block;font-size:9px;color:#aab7d9}.primary{background:linear-gradient(#ffdc71,#e99b25);color:#21172b;border:2px solid #fff0a9;padding:15px 20px;font-size:11px;width:100%;margin-top:17px;box-shadow:0 4px 0 #89521a}.primary:hover{filter:brightness(1.12);transform:translateY(-1px)}.primary span{float:right}.hint{font-size:12px;color:#aab7d9;margin:12px 0 0}.hidden{display:none!important}.arena{position:relative;padding:0;background:#0c1229;overflow:hidden}.hud{height:76px;display:grid;grid-template-columns:1fr 110px 1fr;gap:12px;align-items:center;padding:10px 16px;background:linear-gradient(#202b50,#111a37);border-bottom:2px solid #586b9d;position:relative;z-index:2}.fighter-hud{display:flex;align-items:center;gap:9px;min-width:0}.fighter-hud.right{justify-content:flex-end}.portrait{width:48px;height:48px;flex:none;border:2px solid var(--blue);background:#25365f;display:grid;place-items:center;font:18px 'Press Start 2P';color:#fff;box-shadow:inset 0 0 0 3px #10152c}.right .portrait{border-color:var(--red)}.hud-info{min-width:0;flex:1}.name-line{display:flex;justify-content:space-between;align-items:baseline;gap:8px;margin-bottom:5px}.right .name-line{justify-content:space-between}.name-line b{font:10px 'Press Start 2P';white-space:nowrap}.name-line small{font-size:9px;color:#aab7d9;white-space:nowrap}.health,.meter{height:13px;background:#090e20;border:1px solid #8291bb;overflow:hidden;transform:skewX(-9deg)}.health i,.meter i{display:block;height:100%;width:100%;background:linear-gradient(90deg,#3ae78a,#c9f36a);transition:width .15s}.right .health i{margin-left:auto;background:linear-gradient(90deg,#ffb15b,#ff566c)}.meter{height:5px;margin-top:4px;border:0}.meter i{background:linear-gradient(90deg,#29d8ff,#a78bfa)}.right .meter i{margin-left:auto}.round-info{text-align:center;border-left:1px solid #52618b;border-right:1px solid #52618b}.round-info small{display:block;font:7px 'Press Start 2P';color:var(--gold)}.round-info strong{font:24px 'Press Start 2P';color:#fff;text-shadow:3px 3px #a64b23;display:block;margin:4px 0}.round-info #status{color:var(--cyan)}#game{width:100%;height:auto;display:block;aspect-ratio:16/9;image-rendering:pixelated;background:#242d52}.bottom-hud{height:36px;display:flex;align-items:center;justify-content:space-between;padding:0 18px;background:#111a37;border-top:1px solid #53618b}.special-label{font:8px 'Press Start 2P';color:var(--cyan)}.special-label small{font:8px 'Roboto Condensed';color:#aab7d9;margin-left:8px}.right-label{text-align:right;color:#ff8790}.combo{font:10px 'Press Start 2P';color:var(--gold);text-shadow:2px 2px #a43b24}.fight-overlay{position:absolute;inset:0;z-index:5;display:grid;place-items:center;background:#070b1ccc}.result-card{width:min(90%,470px);padding:28px;text-align:center;background:linear-gradient(145deg,#26345e,#121a37);border:2px solid var(--gold);box-shadow:0 0 35px #000}.result-card h2{font:clamp(19px,4vw,28px) 'Press Start 2P';color:var(--gold);line-height:1.6}.result-card p:not(.eyebrow){color:#d5def8}.result-actions{display:flex;gap:10px}.secondary{flex:1;background:#26345e;color:#fff;padding:12px 7px;font-size:8px}.result-actions .primary{flex:1;font-size:8px;padding:12px 7px}.pause-tag{position:absolute;inset:76px 0 36px;z-index:4;display:grid;place-items:center;background:#080d1caa;font:28px 'Press Start 2P';color:var(--gold)}.controls-panel{padding:13px 18px}.controls-heading{display:flex;justify-content:space-between;border-bottom:1px solid #3c4a73;padding-bottom:9px;margin-bottom:10px;font:9px 'Press Start 2P'}.controls-heading span{color:#8292bd;font-size:7px}.control-columns{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px}.control-columns strong{font:8px 'Press Start 2P';color:var(--cyan)}.control-columns p{font-size:12px;color:#c3cce8;line-height:1.8;margin:5px 0}kbd{display:inline-block;min-width:19px;text-align:center;background:#29385f;border:1px solid #687ba9;border-bottom-width:3px;border-radius:3px;padding:1px 4px;color:#fff;font:10px 'Roboto Condensed';margin-right:3px}footer{max-width:1080px;margin:auto;display:flex;justify-content:space-between;color:#7180a9;font:7px 'Press Start 2P';padding:3px 2px 12px}@media(max-width:760px){body{padding:10px 6px}.brandbar h1{font-size:14px}.edition{font-size:7px;padding:7px}.panel{grid-template-columns:1fr}.hero-copy{padding:20px 20px 8px;min-height:170px}.hero-copy h2{font-size:23px}.menu-controls{padding:15px;border-left:0;border-top:1px solid #7183b155}.hud{grid-template-columns:1fr 65px 1fr;padding:7px;gap:5px;height:66px}.portrait{width:34px;height:40px;font-size:12px}.name-line b{font-size:7px}.name-line small{font-size:7px}.health{height:10px}.round-info strong{font-size:18px}.round-info small{font-size:6px}.bottom-hud{padding:0 7px}.special-label{font-size:6px}.special-label small{display:none}.control-columns{grid-template-columns:1fr 1fr}.extra-controls{grid-column:1/-1}.controls-panel{padding:11px}.control-columns p{font-size:11px}footer{font-size:6px}.result-actions{flex-direction:column}}
+
+/* Motor V3 — Interfaz funcional, sin cambiar el arte de los personajes */
+.difficulty-options{margin-top:14px;padding-top:12px;border-top:1px solid #465477}
+.difficulty-options strong{font:9px 'Press Start 2P',monospace;color:#aee5fc}
+.difficulty-switch{display:flex;gap:6px;margin-top:9px}
+.difficulty-switch button{flex:1;padding:9px 4px;background:#26345a;border:1px solid #55668e;color:#e3e9ff;cursor:pointer;font:9px 'Press Start 2P',monospace}
+.difficulty-switch button.active{background:#3f3659;color:#ffca4b;border-color:#ffca4b}
+.guard-bar{height:4px;background:#111729;overflow:hidden;margin-top:3px;border:1px solid #566486}
+.guard-bar i{display:block;height:100%;width:100%;background:linear-gradient(90deg,#75deff,#c7ecff)}
+.right .guard-bar i{margin-left:auto;background:linear-gradient(90deg,#e9aeff,#e579ee)}
+.win-score{display:flex;justify-content:space-around;color:#ffce5d;font:12px monospace;letter-spacing:2px;height:15px}
+.win-score span:first-child{color:#61b8ff}.win-score span:last-child{color:#ff8c97}
+.round-info strong{margin:1px 0}
+.hud{height:84px}
+.game-actions{position:absolute;top:87px;right:10px;z-index:3;display:flex;gap:5px}
+.game-actions button{background:#0d1736c9;color:#f1e8c9;border:1px solid #778bb9;font:8px 'Press Start 2P',monospace;padding:8px 9px;cursor:pointer}
+.game-actions button:hover{border-color:var(--gold);color:var(--gold)}
+.pause-tag{inset:84px 0 36px;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:14px}
+.pause-tag strong{font:28px 'Press Start 2P',monospace;color:var(--gold)}
+.pause-tag button{width:min(80%,270px);margin:0}
+.touch-controls{display:none;max-width:1080px;margin:-3px auto 14px;gap:12px;justify-content:space-between;padding:12px;background:#0f1935;border:2px solid #40547d;touch-action:none;user-select:none;-webkit-user-select:none}
+.touch-movement,.touch-actions{display:grid;grid-template-columns:repeat(2,minmax(45px,1fr));gap:7px;align-items:stretch}
+.touch-actions{grid-template-columns:repeat(3,minmax(44px,1fr))}
+.touch-controls button{border:1px solid #7693bc;border-bottom:3px solid #455171;min-height:53px;min-width:45px;border-radius:8px;color:#eaf7ff;background:#2c3c66;font-weight:900;font-size:12px;touch-action:none;user-select:none}
+.touch-controls button[data-touch=guard]{background:#3a5077}
+.touch-controls button[data-touch=special]{background:#9b5c20;color:#fff1b6}
+.touch-controls button.is-down{transform:translateY(2px);background:#3e7598;border-color:#8ce5ff}
+@media(max-width:760px){
+  .hud{height:75px}
+  .game-actions{top:77px;right:4px}
+  .game-actions button{font:7px Arial,sans-serif;padding:5px}
+  .pause-tag{inset:75px 0 36px}
+  .name-line small{display:none}
+  .win-score{font-size:10px}
+  .round-info #status{font-size:5px}
+  .difficulty-switch button{font-size:7px}
+}
+@media(hover:none) and (pointer:coarse){
+  .touch-controls:not(.hidden){display:flex}
+  .touch-movement{flex:1}
+  .touch-actions{flex:1.45}
+}
+@media(max-width:460px){
+  .touch-controls{gap:6px;padding:7px}
+  .touch-movement,.touch-actions{gap:4px}
+  .touch-controls button{min-width:30px;min-height:49px;font-size:10px;padding:4px 1px}
+  .hud{grid-template-columns:1fr 61px 1fr}
+  .portrait{width:26px;height:36px}
+  .name-line b{font-size:6px}
+  .special-label{font-size:5px}
+  .combo{font-size:6px}
+  .controls-heading span{display:none}
+}
+
+/* V4 - Selección de cuatro personajes y escenarios */
+.roster{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+.char-card{display:flex;align-items:center;flex-direction:column;padding:7px 5px;min-height:124px;border-radius:6px}
+.char-card img{display:block;width:86px;height:76px;object-fit:cover;object-position:center 25%;border:2px solid #637aa8;border-radius:4px;margin-bottom:5px;image-rendering:auto}
+.char-card.selected img{border-color:#ffd27a;box-shadow:0 0 12px #ffce6388}
+.char-card b{font-family:'Press Start 2P',monospace;font-size:9px;line-height:1.4}
+.char-card small{font-size:10px;line-height:1.18;margin-top:3px}
+.stage-picker{margin-top:16px;padding-top:13px;border-top:1px solid #56658f}
+.stage-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+.stage-card{background:#1a2747;color:#edf4ff;border:2px solid #485c82;border-radius:5px;padding:5px;min-width:0;cursor:pointer;text-align:center;transition:transform .15s, border-color .15s}
+.stage-card:hover{border-color:#7aadd3;transform:translateY(-2px)}
+.stage-card.selected{border-color:#ffd267;background:#382e40;box-shadow:0 0 15px #d79a3b44}
+.stage-card img{display:block;width:100%;height:65px;object-fit:cover;object-position:center;border-radius:3px;margin-bottom:5px;image-rendering:pixelated}
+.stage-card strong{display:block;font-size:10px;line-height:1.1}
+.stage-card small{display:block;color:#abbddd;font-size:9px;margin-top:3px}
+.portrait{background-size:cover;background-position:center 24%;background-repeat:no-repeat;font-size:0!important}
+@media(max-width:520px){.stage-grid{gap:5px}.stage-card img{height:48px}.stage-card strong{font-size:8px}.stage-card small{font-size:7px}.char-card img{width:66px;height:61px}.char-card{min-height:111px}.char-card b{font-size:8px}.char-card small{font-size:8px}}
+/* Fuente local: mantiene identidad arcade incluso al jugar sin conexión */
+.brand-mark,.eyebrow,.brandbar h1,.edition,.hero-copy h2,.section-label,
+.mode,.primary,.secondary,.controls-heading,.round-info strong,
+.round-info small,.name-line b,.special-label,.difficulty-options strong,
+.difficulty-switch button,.result-card h2,.pause-tag strong,
+.game-actions button,.char-card b{font-family:Consolas,'Courier New',monospace!important;font-weight:900!important}
+.brandbar h1{font-size:24px;letter-spacing:1px}
+.hero-copy h2{font-size:clamp(28px,3.6vw,42px);line-height:1.22;letter-spacing:-1.5px}
+.brand-mark{font-size:19px}
+.char-card small{font-family:Arial,sans-serif}
+@media(max-width:760px){.hero-copy h2{font-size:29px}}
+
+#player2-picker .section-label{display:flex;gap:6px;justify-content:space-between;align-items:center}
+#player2-picker .section-label span{float:none}

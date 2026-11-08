@@ -1,0 +1,84 @@
+BATALLA CIO ARCADE — V4 PAMPA EDITION
+====================================
+
+ESTADO: PROTOTIPO JUGABLE CON CUATRO LUCHADORES Y NUEVOS SPRITES
+
+INICIO RÁPIDO
+-------------
+Opción A: abre Batalla_CIO_Arcade_V4_Jugar.html en Chrome o Edge.
+          Es un archivo autónomo sin necesidad de instalar dependencias.
+Opción B: abre index.html dentro de la carpeta del proyecto completo.
+          Si tu navegador restringe recursos file://, ejecuta un servidor local
+          (por ejemplo, python -m http.server 8000 dentro de esta carpeta)
+          y abre http://localhost:8000/
+
+CUATRO PERSONAJES
+-----------------
+- Daniel: EMBESTIDA CIO; estilo ágil.
+- Pancho: GANCHO VELOZ; movilidad y contraataque.
+- Alexis «Miyagi»: FURIA MIYAGI; mayor alcance.
+- Lucho: GOLPE INDUSTRIAL; daño y resistencia.
+
+Los retratos del menú se adaptaron a partir de las 4 imágenes proporcionadas.
+Alexis corresponde a la tarjeta que originalmente decía «Javier».
+Lucho corresponde a «Luis» y Daniel a «Danny».
+
+ESCENARIOS
+----------
+1. PAMPA, desierto de Atacama (nuevo)
+2. PLANTA CONCENTRADORA EL SALVADOR (nuevo)
+3. SALA CIO (escenario V3 conservado)
+
+Las dos arenas nuevas son interpretaciones ilustradas en pixel art,
+no levantamientos geográficos ni planos reales de instalaciones.
+
+SPRITES Y ANIMACIONES
+---------------------
+assets/sprites/ contiene cuatro PNG con transparencia y 12 keyframes por
+personaje, en una cuadrícula de 4 columnas x 3 filas.
+Cada celda tiene 168 x 132 píxeles:
+0 = espera; 1-2 = caminar; 3-4 = correr; 5 = salto;
+6 = agachado; 7 = defensa; 8 = puño; 9 = patada;
+10 = ataque fuerte; 11 = especial.
+
+Las 12 poses son una primera pasada extraída y depurada de arte generado
+para esta versión. El motor cambia de pose según el estado del combate,
+con simulación de 60 pasos por segundo y sprites distintos por personaje.
+Los estados de impacto y derribo reutilizan poses con transformaciones;
+no son todavía animaciones definitivas dibujadas fotograma a fotograma.
+
+CONTROLES
+---------
+Jugador 1: A/D mover, W saltar, S agacharse,
+           J rápido, K fuerte, L patada, I bloquear, U especial.
+Jugador 2: flechas mover/saltar/agacharse,
+           1 rápido, 2 fuerte, 3 patada, 0 bloquear, 4 especial.
+Escape pausa; H muestra hitboxes; M silencia sonido.
+El especial consume 50 puntos de energía.
+En móvil: controles táctiles para el Jugador 1 en modo vs CPU.
+
+CARPETAS Y ARCHIVOS
+-------------------
+index.html         menú, HUD, selección y arena
+style.css          estilos adaptables para escritorio y móvil
+game.js            visualización, entrada y render de sprites/escenarios
+combat-core.js     lógica del motor independiente de Canvas
+assets/portraits/  retratos de los cuatro personajes
+assets/sprites/    sprites transparentes por luchador
+assets/stages/     dos escenarios nuevos
+cio_control_room.png  escenario CIO de V3
+test_engine.js     pruebas de reglas del motor
+build_single.py    reconstruye el HTML autónomo (necesita Python 3)
+
+PRUEBAS REALIZADAS
+-----------------
+- 14 pruebas del motor con Node.js (node test_engine.js)
+- UI de escritorio (4 luchadores, 3 escenarios, carga de recursos)
+- UI táctil móvil, selección de escenario e inicio de pelea
+- Menú, pausa, 1 jugador/CPU, 2 jugadores y efectos de combate
+
+PRÓXIMA REVISIÓN SUGERIDA
+------------------------
+Redibujar a resolución uniforme todos los fotogramas intermedios, ampliar
+los estados de derribo/recuperación e incorporar trazos de golpe y efectos
+específicos sin alterar el núcleo estable del motor.
